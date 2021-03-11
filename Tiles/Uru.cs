@@ -24,7 +24,7 @@ namespace UltimateQuest.Tiles
 
             dustType = 84;
             drop = ModContent.ItemType<Items.Placeable.Uru>();
-            soundType = SoundID.Tink;
+            soundType = SoundID.Swing;
             soundStyle = 1;
             mineResist = 20f;
             minPick = 225;
