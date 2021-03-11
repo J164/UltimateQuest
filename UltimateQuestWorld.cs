@@ -35,17 +35,6 @@ namespace UltimateQuest
                 //Set the "Strength" and "Step" of the vein
                 WorldGen.TileRunner(x, y, WorldGen.genRand.Next(2, 5), WorldGen.genRand.Next(12, 23), ModContent.TileType<Uru>());
             }
-            //ore setup for Beskar
-            for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
-            {
-                //where on the x axis the ore can generate
-                int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-                //where on the y axis the ore can generate
-                int y = WorldGen.genRand.Next((int)WorldGen.rockLayerLow, Main.maxTilesY);
-
-                //Set the "Strength" (Chance of success) and "Step" (Number of ore attempted to be generated) of the vein
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(5, 6), WorldGen.genRand.Next(10, 15), ModContent.TileType<Beskar>());
-            }
         }
         private void UltimateQuestInitialOres(GenerationProgress progress)
         {
@@ -59,6 +48,17 @@ namespace UltimateQuest
 
                 //Set the "Strength" (Chance of success) and "Step" (Number of ore attempted to be generated) of the vein
                 WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 3), ModContent.TileType<Kyber>());
+            }
+            //ore setup for Beskar
+            for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
+            {
+                //where on the x axis the ore can generate
+                int x = WorldGen.genRand.Next(0, Main.maxTilesX);
+                //where on the y axis the ore can generate
+                int y = WorldGen.genRand.Next((int)WorldGen.rockLayerLow, Main.maxTilesY);
+
+                //Set the "Strength" (Chance of success) and "Step" (Number of ore attempted to be generated) of the vein
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(5, 6), WorldGen.genRand.Next(10, 15), ModContent.TileType<Beskar>());
             }
         }
     }
