@@ -11,7 +11,7 @@ namespace UltimateQuest.Items.Accessories
         public override void SetStaticDefaults()
         {
             //Value should be the percent increase of damage
-            Tooltip.SetDefault("Reality can be whatever you want it to be\nThe power of the stone saps at your energy and will\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
+            Tooltip.SetDefault("Reality can be whatever I want.\n- Thanos\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
         }
 
         public override void SetDefaults()
