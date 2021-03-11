@@ -21,7 +21,7 @@ namespace UltimateQuest.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             //gives increased maximum life and summon slots
-            player.statLifeMax = 500;
+            player.statLifeMax2 += 500;
             player.maxMinions += 5;
         }
 
