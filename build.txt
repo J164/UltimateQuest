@@ -1,0 +1,5 @@
+displayName = J164's Ultimate Quest
+author = J164
+version = 0.1
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, *.sln
+includePDB = true
