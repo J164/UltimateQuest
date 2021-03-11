@@ -22,7 +22,7 @@ namespace UltimateQuest.Items.Accessories
         public override void UpdateInventory(Player player)
         {
             //gives darkness debuff
-            player.AddBuff(22, 1);
+            player.AddBuff(13, 1);
         }
 
         public override void UpdateVanity(Player player, EquipType type)
