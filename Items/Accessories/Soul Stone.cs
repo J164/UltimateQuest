@@ -22,7 +22,7 @@ namespace UltimateQuest.Items.Accessories
         {
             //gives increased maximum life and summon slots
             player.statLifeMax = 500;
-            player.maxMinions += 5;
+            player.maxMinions += 3;
         }
 
         public override void AddRecipes()
