@@ -48,7 +48,7 @@ namespace UltimateQuest.Items.Accessories
         {
             //Temp recipe for testing
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.DirtBlock, 10);
+            recipe.AddIngredient(ItemID.DirtBlock, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();
