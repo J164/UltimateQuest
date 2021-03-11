@@ -15,12 +15,12 @@ namespace UltimateQuest.Items
 		{
 			item.damage = 50;
 			item.melee = true;
-			item.width = 40;
+			item.width = 9900;
 			item.height = 40;
-			item.useTime = 20;
-			item.useAnimation = 20;
+			item.useTime = 2;
+			item.useAnimation = 3;
 			item.useStyle = 1;
-			item.knockBack = 6;
+			item.knockBack = -4;
 			item.value = 10000;
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
