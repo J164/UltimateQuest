@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace UltimateQuest.Items.Accessories
 {
-    public class PowerStone : ModItem
+    public class PowerStone : InfinityStone
     {
         public override void SetStaticDefaults()
         {
@@ -21,18 +21,6 @@ namespace UltimateQuest.Items.Accessories
         public override void UpdateInventory(Player player)
         {
             //decreases life regen when item is in inventory
-            player.lifeRegen -= 20;
-        }
-
-        public override void UpdateVanity(Player player, EquipType type)
-        {
-            //decreases life regen when item is in vanity slots
-            player.lifeRegen -= 20;
-        }
-
-        public override void HoldItem(Player player)
-        {
-            //decreases life regen when item is in vanity slots
             player.lifeRegen -= 20;
         }
 

@@ -5,12 +5,11 @@ using Terraria.ModLoader;
 
 namespace UltimateQuest.Items.Accessories
 {
-    public class SpaceStone : ModItem
+    public class SpaceStone : InfinityStone
     {
         public override void SetStaticDefaults()
         {
-            //Value should be the percent increase of damage
-            Tooltip.SetDefault("You feel endless stores of energy deep withing the stone\nThe entire universe is now accessable\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
+            Tooltip.SetDefault("Your focus is drawn to the endless stores of energy deep within the stone\nThe entire universe is now accessable\n");
         }
 
         public override void SetDefaults()
@@ -20,18 +19,6 @@ namespace UltimateQuest.Items.Accessories
         }
 
         public override void UpdateInventory(Player player)
-        {
-            //gives darkness debuff
-            player.AddBuff(22, 1);
-        }
-
-        public override void UpdateVanity(Player player, EquipType type)
-        {
-            //gives darkness debuff
-            player.AddBuff(22, 1);
-        }
-
-        public override void HoldItem(Player player)
         {
             //gives darkness debuff
             player.AddBuff(22, 1);

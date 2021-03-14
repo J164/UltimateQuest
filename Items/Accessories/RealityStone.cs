@@ -6,36 +6,20 @@ using Terraria.ModLoader;
 
 namespace UltimateQuest.Items.Accessories
 {
-    public class RealityStone : ModItem
+    public class RealityStone : InfinityStone
     {
         public override void SetStaticDefaults()
         {
-            //Value should be the percent increase of damage
+            //Update tooltip to reflect actual stat changes
             Tooltip.SetDefault("\"Reality can be whatever I want it to be\"\n - Thanos\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
         }
-
+       
         public override void SetDefaults()
         {
             item.accessory = true;
         }
 
         public override void UpdateInventory(Player player)
-        {
-            //decreases movement speed and damage while in inventory
-            player.moveSpeed /= 2;
-            player.accRunSpeed = 0.1f;
-            player.allDamage *= 0.75f;
-        }
-
-        public override void UpdateVanity(Player player, EquipType type)
-        {
-            //decreases movement speed and damage while in inventory
-            player.moveSpeed /= 2;
-            player.accRunSpeed = 0.1f;
-            player.allDamage *= 0.75f;
-        }
-
-        public override void HoldItem(Player player)
         {
             //decreases movement speed and damage while in inventory
             player.moveSpeed /= 2;

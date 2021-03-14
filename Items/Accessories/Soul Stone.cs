@@ -5,11 +5,11 @@ using Terraria.ModLoader;
 
 namespace UltimateQuest.Items.Accessories
 {
-    public class SoulStone : ModItem
+    public class SoulStone : InfinityStone
     {
         public override void SetStaticDefaults()
         {
-            //Value should be the percent increase of damage
+            //Update tooltip to reflect actual stat changes
             Tooltip.SetDefault("The stone feels as if it is alive\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
         }
 
