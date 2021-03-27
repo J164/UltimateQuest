@@ -1,8 +1,7 @@
 ﻿using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace UltimateQuest.Items.Accessories
+namespace UltimateQuest.Items.Accessories.InfinityStones
 {
     public abstract class InfinityStone : ModItem
     {

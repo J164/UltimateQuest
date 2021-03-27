@@ -3,26 +3,30 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace UltimateQuest.Items.Accessories
+namespace UltimateQuest.Items.Accessories.InfinityStones
 {
-    public class SoulStone : InfinityStone
+    public class SpaceStone : InfinityStone
     {
         public override void SetStaticDefaults()
         {
-            //Update tooltip to reflect actual stat changes
-            Tooltip.SetDefault("The stone feels as if it is alive\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
+            Tooltip.SetDefault("Your focus is drawn to the endless stores of energy deep within the stone\nThe entire universe is now accessable\n");
         }
 
         public override void SetDefaults()
         {
             item.accessory = true;
+            item.defense = 20;
+        }
+
+        public override void UpdateInventory(Player player)
+        {
+            player.AddBuff(BuffID.Darkness, 1);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //gives increased maximum life and summon slots
-            player.statLifeMax2 += 500;
-            player.maxMinions += 5;
+            //gives obstructed and darkness debuff
+            player.AddBuff(BuffID.Blackout, 1);
         }
 
         public override void AddRecipes()

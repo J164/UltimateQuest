@@ -3,14 +3,14 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace UltimateQuest.Items.Accessories
+namespace UltimateQuest.Items.Accessories.InfinityStones
 {
-    public class PowerStone : InfinityStone
+    public class MindStone : InfinityStone
     {
         public override void SetStaticDefaults()
         {
-            //Value should be the percent increase of damage
-            Tooltip.SetDefault("The Power of the Universe Contained in a Single Nugget\nIt's power is too great for any mortal to contain\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
+            //Update tooltip to reflect actual stat changes
+            Tooltip.SetDefault("You feel a conscience reach out to you" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
         }
 
         public override void SetDefaults()
@@ -21,15 +21,21 @@ namespace UltimateQuest.Items.Accessories
         public override void UpdateInventory(Player player)
         {
             //decreases life regen when item is in inventory
-            player.lifeRegen -= 20;
+            player.AddBuff(BuffID.Confused, 1);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //increase damage by 4 times
-            player.allDamage += 2f;
-            //decrease life regen by 4 hp/s
-            player.lifeRegen -= 75;
+            player.AddBuff(BuffID.Cursed, 1);
+            //Add a unique confused debuff
+            //Add a visual effect for confusion aura
+            foreach (NPC npc in Main.npc)
+            {
+                if (npc.active && !npc.friendly && !npc.boss && npc.Distance(player.Center) < 300)
+                {
+                    npc.AddBuff(BuffID.Confused, 5);
+                }
+            }
         }
 
         public override void AddRecipes()

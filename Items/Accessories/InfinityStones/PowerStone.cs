@@ -3,32 +3,33 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace UltimateQuest.Items.Accessories
+namespace UltimateQuest.Items.Accessories.InfinityStones
 {
-    public class SpaceStone : InfinityStone
+    public class PowerStone : InfinityStone
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Your focus is drawn to the endless stores of energy deep within the stone\nThe entire universe is now accessable\n");
+            //Value should be the percent increase of damage
+            Tooltip.SetDefault("The Power of the Universe Contained in a Single Nugget\nIt's power is too great for any mortal to contain\n" + Language.GetTextValue("CommonItemTooltip.PercentIncreasedDamage", 200));
         }
 
         public override void SetDefaults()
         {
             item.accessory = true;
-            item.defense = 20;
         }
 
         public override void UpdateInventory(Player player)
         {
-            //gives darkness debuff
-            player.AddBuff(22, 1);
+            //decreases life regen when item is in inventory
+            player.lifeRegen -= 20;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //gives obstructed and darkness debuff
-            player.AddBuff(163, 1);
-            player.AddBuff(22, 1);
+            //increase damage by 3 times
+            player.allDamage += 2f;
+            //decrease life regen by 75 hp/s
+            player.lifeRegen -= 75;
         }
 
         public override void AddRecipes()
